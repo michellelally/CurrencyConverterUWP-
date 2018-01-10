@@ -1,0 +1,335 @@
+﻿<Page
+    x:Class="EUCurrencyConverter.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EUCurrencyConverter"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="rootGrid" Background="#FF38388B">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="40*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" FontSize="36" FontFamily="Calibri Light" Margin="294,51,207,40" HorizontalAlignment="Center" Width="779" Foreground="Gold">
+                <Run Text="Currencies of the European "/>
+                <Run Text="Union "/>
+                <Run Text="Converter"/>
+            </TextBlock>
+            <Pivot x:Name="rootPivot" HorizontalAlignment="Center" Margin="0,134,0,10" Grid.RowSpan="2">
+                <PivotItem Header="Euro">
+                    <Grid x:Name="Euro_Pivot">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Name="Head" Text="Please enter a value to convert in the box below." Grid.Row="0" HorizontalAlignment="Center" FontFamily="Calibri Light" FontSize="24" Foreground="Gold" Margin="367,43,376,32"></TextBlock>
+                        <TextBox Name="TextBox_EUR" Grid.Row="1" Height="60" Width="150" Margin="553,23" FontSize="18" FontFamily="Calibri Light" ></TextBox>
+                        <ComboBox x:Name="comboBox1" Grid.Row="2" HorizontalAlignment="Center" Margin="0,40" Height="50" Width="400">
+                            <ComboBoxItem  IsSelected="True">Bulgarian Lev</ComboBoxItem>
+                            <ComboBoxItem>British Pound Sterling</ComboBoxItem>
+                            <ComboBoxItem>Croatian Kuna</ComboBoxItem>
+                            <ComboBoxItem>Czech Koruna</ComboBoxItem>
+                            <ComboBoxItem>Danish Krone</ComboBoxItem>
+                            <ComboBoxItem>Hungarian Forint</ComboBoxItem>
+                            <ComboBoxItem>Polish Zloty</ComboBoxItem>
+                            <ComboBoxItem>Romanian Leu</ComboBoxItem>
+                            <ComboBoxItem>Swedish Krona</ComboBoxItem>
+                            <ComboBoxItem>Swiss Franc</ComboBoxItem>
+                        </ComboBox>
+                        <Button Click="ConvertBtnEUR_Click" Content="Convert" Height="60" Width="150" Grid.Row="3" HorizontalAlignment="Center" Background="Gold" FontSize="20">
+                        </Button>
+                        <TextBlock Grid.Row="4" x:Name="output" HorizontalAlignment="Center" Height="60" Width="150" FontFamily="Calibri Light" FontSize="24" Foreground="White"></TextBlock>
+                    </Grid>
+                </PivotItem>
+                <PivotItem Header="Bulgarian Lev">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Please enter a value to convert in the box below." Grid.Row="0" HorizontalAlignment="Center" FontFamily="Calibri Light" FontSize="24" Margin="0,20" Foreground="Gold"></TextBlock>
+                        <TextBox Name="TextBox_BGN" Grid.Row="1" Height="60" Width="150" FontSize="18" FontFamily="Calibri Light" ></TextBox>
+                        <ComboBox x:Name="comboBox3" Grid.Row="2" HorizontalAlignment="Center" Margin="0,40" Height="50" Width="400">
+                            <ComboBoxItem  IsSelected="True">British Pound Sterling</ComboBoxItem>
+                            <ComboBoxItem>Croatian Kuna</ComboBoxItem>
+                            <ComboBoxItem>Czech Koruna</ComboBoxItem>
+                            <ComboBoxItem>Danish Krone</ComboBoxItem>
+                            <ComboBoxItem>Euro</ComboBoxItem>
+                            <ComboBoxItem>Hungarian Forint</ComboBoxItem>
+                            <ComboBoxItem>Polish Zloty</ComboBoxItem>
+                            <ComboBoxItem>Romanian Leu</ComboBoxItem>
+                            <ComboBoxItem>Swedish Krona</ComboBoxItem>
+                            <ComboBoxItem>Swiss Franc</ComboBoxItem>
+                        </ComboBox>
+                        <Button Click="ConvertBtnBGN_Click" Content="Convert" Height="60" Width="150" Grid.Row="3" HorizontalAlignment="Center" Background="Gold" FontSize="20">
+                        </Button>
+                        <TextBlock Grid.Row="4" x:Name="output3" HorizontalAlignment="Center" Height="60" Width="150"  FontSize="24" Foreground="White"></TextBlock>
+                    </Grid>
+                </PivotItem>
+                <PivotItem Header="Pounds Sterling">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Please enter a value to convert in the box below." Grid.Row="0" HorizontalAlignment="Center" FontFamily="Calibri Light" FontSize="24" Margin="0,20" Foreground="Gold"></TextBlock>
+                        <TextBox Name="TextBox_GBP" Grid.Row="1" Height="60" Width="150" FontSize="18" FontFamily="Calibri Light" ></TextBox>
+                        <ComboBox x:Name="comboBox2" Grid.Row="2" HorizontalAlignment="Center" Margin="0,40" Height="50" Width="400">
+                            <ComboBoxItem  IsSelected="True">Bulgarian Lev</ComboBoxItem>
+                            <ComboBoxItem>Croatian Kuna</ComboBoxItem>
+                            <ComboBoxItem>Czech Koruna</ComboBoxItem>
+                            <ComboBoxItem>Danish Krone</ComboBoxItem>
+                            <ComboBoxItem>Euro</ComboBoxItem>
+                            <ComboBoxItem>Hungarian Forint</ComboBoxItem>
+                            <ComboBoxItem>Polish Zloty</ComboBoxItem>
+                            <ComboBoxItem>Romanian Leu</ComboBoxItem>
+                            <ComboBoxItem>Swedish Krona</ComboBoxItem>
+                            <ComboBoxItem>Swiss Franc</ComboBoxItem>
+                        </ComboBox>
+                        <Button Click="ConvertBtnGBP_Click" Content="Convert" Height="60" Width="150" Grid.Row="3" HorizontalAlignment="Center" Background="Gold" FontSize="20">
+                        </Button>
+                        <TextBlock Grid.Row="4" x:Name="output2" HorizontalAlignment="Center" Height="60" Width="150"  FontSize="24" Foreground="White"></TextBlock>
+                    </Grid>
+                </PivotItem>
+                <PivotItem Header="Croatian Kuna">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Please enter a value to convert in the box below." Grid.Row="0" HorizontalAlignment="Center" FontFamily="Calibri Light" FontSize="24" Margin="0,20" Foreground="Gold"></TextBlock>
+                        <TextBox Name="TextBox_HRK" Grid.Row="1" Height="60" Width="150" FontSize="18" FontFamily="Calibri Light" ></TextBox>
+                        <ComboBox x:Name="comboBox4" Grid.Row="2" HorizontalAlignment="Center" Margin="0,40" Height="50" Width="400">
+                            <ComboBoxItem  IsSelected="True">Bulgarian Lev</ComboBoxItem>
+                            <ComboBoxItem>British Pound Sterling</ComboBoxItem>
+                            <ComboBoxItem>Czech Koruna</ComboBoxItem>
+                            <ComboBoxItem>Danish Krone</ComboBoxItem>
+                            <ComboBoxItem>Euro</ComboBoxItem>
+                            <ComboBoxItem>Hungarian Forint</ComboBoxItem>
+                            <ComboBoxItem>Polish Zloty</ComboBoxItem>
+                            <ComboBoxItem>Romanian Leu</ComboBoxItem>
+                            <ComboBoxItem>Swedish Krona</ComboBoxItem>
+                            <ComboBoxItem>Swiss Franc</ComboBoxItem>
+                        </ComboBox>
+                        <Button Click="ConvertBtnHRK_Click" Content="Convert" Height="60" Width="150" Grid.Row="3" HorizontalAlignment="Center" Background="Gold" FontSize="20">
+                        </Button>
+                        <TextBlock Grid.Row="4" x:Name="output4" HorizontalAlignment="Center" Height="60" Width="150"  FontSize="24" Foreground="White"></TextBlock>
+                    </Grid>
+                </PivotItem>
+                <PivotItem Header="Czech Koruna">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Please enter a value to convert in the box below." Grid.Row="0" HorizontalAlignment="Center" FontFamily="Calibri Light" FontSize="24" Margin="0,20" Foreground="Gold"></TextBlock>
+                        <TextBox Name="TextBox_CZK" Grid.Row="1" Height="60" Width="150" FontSize="18" FontFamily="Calibri Light" ></TextBox>
+                        <ComboBox x:Name="comboBox5" Grid.Row="2" HorizontalAlignment="Center" Margin="0,40" Height="50" Width="400">
+                            <ComboBoxItem  IsSelected="True">Bulgarian Lev</ComboBoxItem>
+                            <ComboBoxItem>British Pound Sterling</ComboBoxItem>
+                            <ComboBoxItem>Croatian Kuna</ComboBoxItem>
+                            <ComboBoxItem>Danish Krone</ComboBoxItem>
+                            <ComboBoxItem>Euro</ComboBoxItem>
+                            <ComboBoxItem>Hungarian Forint</ComboBoxItem>
+                            <ComboBoxItem>Polish Zloty</ComboBoxItem>
+                            <ComboBoxItem>Romanian Leu</ComboBoxItem>
+                            <ComboBoxItem>Swedish Krona</ComboBoxItem>
+                            <ComboBoxItem>Swiss Franc</ComboBoxItem>
+                        </ComboBox>
+                        <Button Click="ConvertBtnCZK_Click" Content="Convert" Height="60" Width="150" Grid.Row="3" HorizontalAlignment="Center" Background="Gold" FontSize="20">
+                        </Button>
+                        <TextBlock Grid.Row="4" x:Name="output5" HorizontalAlignment="Center" Height="60" Width="150"  FontSize="24" Foreground="White"></TextBlock>
+                    </Grid>
+                </PivotItem>
+                <PivotItem Header="Danish Krone">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Please enter a value to convert in the box below." Grid.Row="0" HorizontalAlignment="Center" FontFamily="Calibri Light" FontSize="24" Margin="0,20" Foreground="Gold"></TextBlock>
+                        <TextBox Name="TextBox_DKK" Grid.Row="1" Height="60" Width="150" FontSize="18" FontFamily="Calibri Light" ></TextBox>
+                        <ComboBox x:Name="comboBox6" Grid.Row="2" HorizontalAlignment="Center" Margin="0,40" Height="50" Width="400">
+                            <ComboBoxItem  IsSelected="True">Bulgarian Lev</ComboBoxItem>
+                            <ComboBoxItem>British Pound Sterling</ComboBoxItem>
+                            <ComboBoxItem>Croatian Kuna</ComboBoxItem>
+                            <ComboBoxItem>Czech Koruna</ComboBoxItem>
+                            <ComboBoxItem>Euro</ComboBoxItem>
+                            <ComboBoxItem>Hungarian Forint</ComboBoxItem>
+                            <ComboBoxItem>Polish Zloty</ComboBoxItem>
+                            <ComboBoxItem>Romanian Leu</ComboBoxItem>
+                            <ComboBoxItem>Swedish Krona</ComboBoxItem>
+                            <ComboBoxItem>Swiss Franc</ComboBoxItem>
+                        </ComboBox>
+                        <Button Click="ConvertBtnDKK_Click" Content="Convert" Height="60" Width="150" Grid.Row="3" HorizontalAlignment="Center" Background="Gold" FontSize="20">
+                        </Button>
+                        <TextBlock Grid.Row="4" x:Name="output6" HorizontalAlignment="Center" Height="60" Width="150"  FontSize="24" Foreground="White"></TextBlock>
+                    </Grid>
+                </PivotItem>
+                <PivotItem Header="Hungarian Forint">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Please enter a value to convert in the box below." Grid.Row="0" HorizontalAlignment="Center" FontFamily="Calibri Light" FontSize="24" Margin="0,20" Foreground="Gold"></TextBlock>
+                        <TextBox Name="TextBox_HUF" Grid.Row="1" Height="60" Width="150 " FontSize="18" FontFamily="Calibri Light" ></TextBox>
+                        <ComboBox x:Name="comboBox7" Grid.Row="2" HorizontalAlignment="Center" Margin="0,40" Height="50" Width="400">
+                            <ComboBoxItem  IsSelected="True">Bulgarian Lev</ComboBoxItem>
+                            <ComboBoxItem>British Pound Sterling</ComboBoxItem>
+                            <ComboBoxItem>Croatian Kuna</ComboBoxItem>
+                            <ComboBoxItem>Czech Koruna</ComboBoxItem>
+                            <ComboBoxItem>Danish Krone</ComboBoxItem>
+                            <ComboBoxItem>Euro</ComboBoxItem>
+                            <ComboBoxItem>Polish Zloty</ComboBoxItem>
+                            <ComboBoxItem>Romanian Leu</ComboBoxItem>
+                            <ComboBoxItem>Swedish Krona</ComboBoxItem>
+                            <ComboBoxItem>Swiss Franc</ComboBoxItem>
+                        </ComboBox>
+                        <Button Click="ConvertBtnHUF_Click" Content="Convert" Height="60" Width="150" Grid.Row="3" HorizontalAlignment="Center" Background="Gold" FontSize="20">
+                        </Button>
+                        <TextBlock Grid.Row="4" x:Name="output7" HorizontalAlignment="Center" Height="60" Width="150"  FontSize="24" Foreground="White"></TextBlock>
+                    </Grid>
+                </PivotItem>
+                <PivotItem Header="Polish Zloty">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Please enter a value to convert in the box below." Grid.Row="0" HorizontalAlignment="Center" FontFamily="Calibri Light" FontSize="24" Margin="0,20" Foreground="Gold"></TextBlock>
+                        <TextBox Name="TextBox_PLN" Grid.Row="1" Height="60" Width="150" FontSize="18" FontFamily="Calibri Light" ></TextBox>
+                        <ComboBox x:Name="comboBox8" Grid.Row="2" HorizontalAlignment="Center" Margin="0,40" Height="50" Width="400">
+                            <ComboBoxItem  IsSelected="True">Bulgarian Lev</ComboBoxItem>
+                            <ComboBoxItem>British Pound Sterling</ComboBoxItem>
+                            <ComboBoxItem>Croatian Kuna</ComboBoxItem>
+                            <ComboBoxItem>Czech Koruna</ComboBoxItem>
+                            <ComboBoxItem>Danish Krone</ComboBoxItem>
+                            <ComboBoxItem>Euro</ComboBoxItem>
+                            <ComboBoxItem>Hungarian Forint</ComboBoxItem>
+                            <ComboBoxItem>Romanian Leu</ComboBoxItem>
+                            <ComboBoxItem>Swedish Krona</ComboBoxItem>
+                            <ComboBoxItem>Swiss Franc</ComboBoxItem>
+                        </ComboBox>
+                        <Button Click="ConvertBtnPLN_Click" Content="Convert" Height="60" Width="150" Grid.Row="3" HorizontalAlignment="Center" Background="Gold" FontSize="20">
+                        </Button>
+                        <TextBlock Grid.Row="4" x:Name="output8" HorizontalAlignment="Center" Height="60" Width="150"  FontSize="24" Foreground="White"></TextBlock>
+                    </Grid>
+                </PivotItem>
+                <PivotItem Header="Romanian Leu">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Please enter a value to convert in the box below." Grid.Row="0" HorizontalAlignment="Center" FontFamily="Calibri Light" FontSize="24" Margin="0,20" Foreground="Gold"></TextBlock>
+                        <TextBox Name="TextBox_RON" Grid.Row="1" Height="60" Width="150" FontSize="18" FontFamily="Calibri Light" ></TextBox>
+                        <ComboBox x:Name="comboBox9" Grid.Row="2" HorizontalAlignment="Center" Margin="0,40" Height="50" Width="400">
+                            <ComboBoxItem  IsSelected="True">Bulgarian Lev</ComboBoxItem>
+                            <ComboBoxItem>British Pound Sterling</ComboBoxItem>
+                            <ComboBoxItem>Croatian Kuna</ComboBoxItem>
+                            <ComboBoxItem>Czech Koruna</ComboBoxItem>
+                            <ComboBoxItem>Danish Krone</ComboBoxItem>
+                            <ComboBoxItem>Euro</ComboBoxItem>
+                            <ComboBoxItem>Hungarian Forint</ComboBoxItem>
+                            <ComboBoxItem>Polish Zloty</ComboBoxItem>
+                            <ComboBoxItem>Swedish Krona</ComboBoxItem>
+                            <ComboBoxItem>Swiss Franc</ComboBoxItem>
+                        </ComboBox>
+                        <Button Click="ConvertBtnRON_Click" Content="Convert" Height="60" Width="150" Grid.Row="3" HorizontalAlignment="Center" Background="Gold" FontSize="20">
+                        </Button>
+                        <TextBlock Grid.Row="4" x:Name="output9" HorizontalAlignment="Center" Height="60" Width="150"  FontSize="24" Foreground="White"></TextBlock>
+                    </Grid>
+
+                </PivotItem>
+                <PivotItem Header="Swedish Krona">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Please enter a value to convert in the box below." Grid.Row="0" HorizontalAlignment="Center" FontFamily="Calibri Light" FontSize="24" Margin="0,20" Foreground="Gold"></TextBlock>
+                        <TextBox Name="TextBox_SEK" Grid.Row="1" Height="60" Width="150" FontSize="18" FontFamily="Calibri Light" ></TextBox>
+                        <ComboBox x:Name="comboBox10" Grid.Row="2" HorizontalAlignment="Center" Margin="0,40" Height="50" Width="400">
+                            <ComboBoxItem  IsSelected="True">Bulgarian Lev</ComboBoxItem>
+                            <ComboBoxItem>British Pound Sterling</ComboBoxItem>
+                            <ComboBoxItem>Croatian Kuna</ComboBoxItem>
+                            <ComboBoxItem>Czech Koruna</ComboBoxItem>
+                            <ComboBoxItem>Danish Krone</ComboBoxItem>
+                            <ComboBoxItem>Euro</ComboBoxItem>
+                            <ComboBoxItem>Hungarian Forint</ComboBoxItem>
+                            <ComboBoxItem>Polish Zloty</ComboBoxItem>
+                            <ComboBoxItem>Romanian Leu</ComboBoxItem>
+                            <ComboBoxItem>Swiss Franc</ComboBoxItem>
+                        </ComboBox>
+                        <Button Click="ConvertBtnSEK_Click" Content="Convert" Height="60" Width="150" Grid.Row="3" HorizontalAlignment="Center" Background="Gold" FontSize="20">
+                        </Button>
+                        <TextBlock Grid.Row="4" x:Name="output10" HorizontalAlignment="Center" Height="60" Width="150"  FontSize="24" Foreground="White"></TextBlock>
+                    </Grid>
+                </PivotItem>
+                <PivotItem Header="Swiss Franc">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Please enter a value to convert in the box below." Grid.Row="0" HorizontalAlignment="Center" FontFamily="Calibri Light" FontSize="24" Margin="0,20" Foreground="Gold"></TextBlock>
+                        <TextBox Name="TextBox_CHF" Grid.Row="1" Height="60" Width="150" FontSize="18" FontFamily="Calibri Light" ></TextBox>
+                        <ComboBox x:Name="comboBox11" Grid.Row="2" HorizontalAlignment="Center" Margin="0,40" Height="50" Width="400">
+                            <ComboBoxItem  IsSelected="True">Bulgarian Lev</ComboBoxItem>
+                            <ComboBoxItem>British Pound Sterling</ComboBoxItem>
+                            <ComboBoxItem>Croatian Kuna</ComboBoxItem>
+                            <ComboBoxItem>Czech Koruna</ComboBoxItem>
+                            <ComboBoxItem>Danish Krone</ComboBoxItem>
+                            <ComboBoxItem>Euro</ComboBoxItem>
+                            <ComboBoxItem>Hungarian Forint</ComboBoxItem>
+                            <ComboBoxItem>Polish Zloty</ComboBoxItem>
+                            <ComboBoxItem>Romanian Leu</ComboBoxItem>
+                            <ComboBoxItem>Swedish Krona</ComboBoxItem>
+                        </ComboBox>
+                        <Button Click="ConvertBtnCHF_Click" Content="Convert" Height="60" Width="150" Grid.Row="3" HorizontalAlignment="Center" Background="Gold" FontSize="20">
+                        </Button>
+                        <TextBlock Grid.Row="4" x:Name="output11" HorizontalAlignment="Center" Height="60" Width="150"  FontSize="24" Foreground="White"></TextBlock>
+                    </Grid>
+                </PivotItem>
+            </Pivot>
+        </Grid>
+    </Grid>
+</Page>
